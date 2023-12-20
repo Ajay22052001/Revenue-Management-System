@@ -1,7 +1,6 @@
 $(document).ready(function () {
-  const subtractedTotal = (columnName, total, subtractValue) => {
-    console.log("columnName: ", columnName);
-    let subTotal = total - subtractValue;
+  const subtractedTotal = (columnName, deliveryTotal, salesValue) => {
+    let subTotal = salesValue - deliveryTotal;
     $(columnName).html(subTotal);
   };
 
@@ -211,9 +210,21 @@ $(document).ready(function () {
   //   $(".diff-total").html(getSubTotal(".diff"));
   // });
 
-  subtractedTotal(".q1-diff-sd-total", $(".opporuntity-1-total").html(), 8);
-  subtractedTotal(".q2-diff-sd-total", $(".opporuntity-2-total").html(), 5);
-  subtractedTotal(".q3-diff-sd-total", $(".opporuntity-3-total").html(), 4);
+  subtractedTotal(
+    ".q1-diff-sd-total",
+    $(".opporuntity-1-total").html(),
+    $(".bq1").val()
+  );
+  subtractedTotal(
+    ".q2-diff-sd-total",
+    $(".opporuntity-2-total").html(),
+    $(".bq2").val()
+  );
+  subtractedTotal(
+    ".q3-diff-sd-total",
+    $(".opporuntity-3-total").html(),
+    $(".bq3").val()
+  );
 
   /*SD Column Total*/
   const getSdTotal = () => {
