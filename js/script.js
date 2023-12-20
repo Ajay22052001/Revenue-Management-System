@@ -147,6 +147,28 @@ $(document).ready(function () {
     getSubTotalOfCurrentWeek();
   });
 
+  const getDtColumnTotal = (row) => {
+    let dt_calculated_total_sum = 0;
+    $("#currentWeek ").each(function () {
+      let get_dt_textbox_value = $(this).val();
+      console.log("get_dt_textbox_value: ", get_dt_textbox_value);
+      if ($.isNumeric(get_dt_textbox_value)) {
+        dt_calculated_total_sum += parseFloat(get_dt_textbox_value);
+      }
+    });
+
+    console.log("dt_calculated_total_sum: ", dt_calculated_total_sum);
+    return dt_calculated_total_sum;
+  };
+
+  let TotalDtColumn = getDtColumnTotal();
+  $(".project-row-1-total").html(TotalDtColumn);
+
+  $("#currentWeek").on("input", ".project-row-1", function () {
+    let dtTotal = getDtTotal();
+    $(".dt-total").html(dtTotal);
+  });
+
   /*DT Column Total*/
   const getDtTotal = () => {
     let dt_calculated_total_sum = 0;
