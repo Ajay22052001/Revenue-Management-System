@@ -37,6 +37,7 @@ $(document).ready(function () {
   $("#currentWeek").on("input", ".rst", function () {
     let totalRst = getRstTotal();
     $(".rst-total").html(totalRst);
+    getSubTotalOfCurrentWeek();
   });
 
   /*Rst Pending Column Total*/
@@ -59,6 +60,7 @@ $(document).ready(function () {
   $("#currentWeek").on("input", ".rst-pending", function () {
     let rstPenTotal = getRstPendingTotal();
     $(".rst-pending-total").html(rstPenTotal);
+    getSubTotalOfCurrentWeek();
   });
 
   /*DP Column Total*/
@@ -79,6 +81,7 @@ $(document).ready(function () {
   $("#currentWeek").on("input", ".dp", function () {
     let dpTotal = getDpTotal();
     $(".dp-total").html(dpTotal);
+    getSubTotalOfCurrentWeek();
   });
 
   /*HCB Column Total*/
@@ -99,6 +102,7 @@ $(document).ready(function () {
   $("#currentWeek").on("input", ".hcb", function () {
     let hcbTotal = getHcbTotal();
     $(".hcb-total").html(hcbTotal);
+    getSubTotalOfCurrentWeek();
   });
 
   /*MCB Column Total*/
@@ -119,6 +123,7 @@ $(document).ready(function () {
   $("#currentWeek").on("input", ".mcb", function () {
     let mcbTotal = getMcbTotal();
     $(".mcb-total").html(mcbTotal);
+    getSubTotalOfCurrentWeek();
   });
 
   /*LCB Column Total*/
@@ -139,6 +144,7 @@ $(document).ready(function () {
   $("#currentWeek").on("input", ".lcb", function () {
     let lcbTotal = getLcbTotal();
     $(".lcb-total").html(lcbTotal);
+    getSubTotalOfCurrentWeek();
   });
 
   /*DT Column Total*/
@@ -200,4 +206,33 @@ $(document).ready(function () {
     let diffTotal = getDiffTotal();
     $(".diff-total").html(diffTotal);
   });
+
+  /*Sub Total Value*/
+  const getSubTotalOfCurrentWeek = () => {
+    let totalRst = parseInt($(".rst-total").text());
+    $(".subTotal-rst").html(totalRst);
+    let totalRstPending = parseInt($(".rst-pending-total").text());
+    $(".subTotal-rst-pending").html(totalRst + totalRstPending);
+    let totalDp = parseInt($(".dp-total").text());
+    $(".subTotal-dp").html(totalRst + totalRstPending + totalDp);
+    let totalHcb = parseInt($(".hcb-total").text());
+    $(".subTotal-hcb").html(totalRst + totalRstPending + totalDp + totalHcb);
+    let totalMcb = parseInt($(".mcb-total").text());
+    $(".subTotal-mcb").html(
+      totalRst + totalRstPending + totalDp + totalHcb + totalMcb
+    );
+    let totalLcb = parseInt($(".lcb-total").text());
+    $(".subTotal-lcb").html(
+      totalRst + totalRstPending + totalDp + totalHcb + totalMcb + totalLcb
+    );
+
+    // $(".subTotal-final").html(
+    //   totalRst + totalRstPending + totalDp + totalHcb + totalMcb + totalLcb
+    // );
+
+    console.log("totalLcb: ", totalLcb);
+    return null;
+  };
+
+  getSubTotalOfCurrentWeek();
 });
