@@ -1,4 +1,10 @@
 $(document).ready(function () {
+  const subtractedTotal = (columnName, total, subtractValue) => {
+    console.log("columnName: ", columnName);
+    let subTotal = total - subtractValue;
+    $(columnName).html(subTotal);
+  };
+
   /*Booking Column Total*/
   const getBookingTotal = () => {
     let booking_calculated_total_sum = 0;
@@ -62,7 +68,18 @@ $(document).ready(function () {
     $(".rst-pending-total").html(rstPenTotal);
     getSubTotalOfCurrentWeek();
   });
+  const getSubTotal = (rowClass) => {
+    let clickedClass = "#currentWeek " + rowClass;
 
+    let sub_calculated_total_sum = 0;
+    $(clickedClass).each(function () {
+      let get_sub_textbox_value = parseInt($(this).text());
+      if ($.isNumeric(get_sub_textbox_value)) {
+        sub_calculated_total_sum += parseFloat(get_sub_textbox_value);
+      }
+    });
+    return sub_calculated_total_sum;
+  };
   /*DP Column Total*/
   const getDpTotal = () => {
     let dp_calculated_total_sum = 0;
@@ -147,47 +164,56 @@ $(document).ready(function () {
     getSubTotalOfCurrentWeek();
   });
 
-  const getDtColumnTotal = (row) => {
-    let dt_calculated_total_sum = 0;
-    $("#currentWeek ").each(function () {
-      let get_dt_textbox_value = $(this).val();
-      console.log("get_dt_textbox_value: ", get_dt_textbox_value);
-      if ($.isNumeric(get_dt_textbox_value)) {
-        dt_calculated_total_sum += parseFloat(get_dt_textbox_value);
+  /* opporuntity*/
+  const getOpporuntityTotal = (rowClass) => {
+    let calculated_total_sum = 0;
+    let clickedClass = "#currentWeek " + rowClass;
+    $(clickedClass).each(function () {
+      let get_textbox_value = $(this).val();
+      if ($.isNumeric(get_textbox_value)) {
+        calculated_total_sum += parseFloat(get_textbox_value);
       }
     });
 
-    console.log("dt_calculated_total_sum: ", dt_calculated_total_sum);
-    return dt_calculated_total_sum;
+    return calculated_total_sum;
   };
 
-  let TotalDtColumn = getDtColumnTotal();
-  $(".project-row-1-total").html(TotalDtColumn);
-
-  $("#currentWeek").on("input", ".project-row-1", function () {
-    let dtTotal = getDtTotal();
-    $(".dt-total").html(dtTotal);
+  $(".opporuntity-1-total").html(getOpporuntityTotal(".opporuntity-1"));
+  $("#currentWeek").on("input", ".opporuntity-1", function () {
+    $(".opporuntity-1-total").html(getOpporuntityTotal(".opporuntity-1"));
+    subtractedTotal(".q1-diff-sd-total", $(".opporuntity-1-total").html(), 8);
+    $(".dt-total").html(getSubTotal(".dt"));
   });
 
-  /*DT Column Total*/
-  const getDtTotal = () => {
-    let dt_calculated_total_sum = 0;
-    $("#currentWeek .dt").each(function () {
-      let get_dt_textbox_value = $(this).val();
-      if ($.isNumeric(get_dt_textbox_value)) {
-        dt_calculated_total_sum += parseFloat(get_dt_textbox_value);
-      }
-    });
-    return dt_calculated_total_sum;
-  };
+  $(".opporuntity-2-total").html(getOpporuntityTotal(".opporuntity-2"));
+  $("#currentWeek").on("input", ".opporuntity-2", function () {
+    $(".opporuntity-2-total").html(getOpporuntityTotal(".opporuntity-2"));
+    subtractedTotal(".q2-diff-sd-total", $(".opporuntity-2-total").html(), 5);
+    $(".dt-total").html(getSubTotal(".dt"));
+  });
 
-  let TotalDt = getDtTotal();
-  $(".dt-total").html(TotalDt);
+  $(".opporuntity-3-total").html(getOpporuntityTotal(".opporuntity-3"));
+  $("#currentWeek").on("input", ".opporuntity-3", function () {
+    $(".opporuntity-3-total").html(getOpporuntityTotal(".opporuntity-3"));
+    subtractedTotal(".q3-diff-sd-total", $(".opporuntity-3-total").html(), 4);
+    $(".dt-total").html(getSubTotal(".dt"));
+  });
 
+  /*SubTotal Column Total*/
+
+  $(".dt-total").html(getSubTotal(".dt"));
   $("#currentWeek").on("input", ".dt", function () {
-    let dtTotal = getDtTotal();
-    $(".dt-total").html(dtTotal);
+    $(".dt-total").html(getSubTotal(".dt"));
   });
+
+  // $(".diff-total").html(getSubTotal(".diff"));
+  // $("#currentWeek").on("input", ".diff", function () {
+  //   $(".diff-total").html(getSubTotal(".diff"));
+  // });
+
+  subtractedTotal(".q1-diff-sd-total", $(".opporuntity-1-total").html(), 8);
+  subtractedTotal(".q2-diff-sd-total", $(".opporuntity-2-total").html(), 5);
+  subtractedTotal(".q3-diff-sd-total", $(".opporuntity-3-total").html(), 4);
 
   /*SD Column Total*/
   const getSdTotal = () => {
@@ -210,24 +236,24 @@ $(document).ready(function () {
   });
 
   /*Diff Column Total*/
-  const getDiffTotal = () => {
-    let diff_calculated_total_sum = 0;
-    $("#currentWeek .diff").each(function () {
-      let get_diff_textbox_value = $(this).val();
-      if ($.isNumeric(get_diff_textbox_value)) {
-        diff_calculated_total_sum += parseFloat(get_diff_textbox_value);
-      }
-    });
-    return diff_calculated_total_sum;
-  };
+  // const getDiffTotal = () => {
+  //   let diff_calculated_total_sum = 0;
+  //   $("#currentWeek .diff").each(function () {
+  //     let get_diff_textbox_value = $(this).val();
+  //     if ($.isNumeric(get_diff_textbox_value)) {
+  //       diff_calculated_total_sum += parseFloat(get_diff_textbox_value);
+  //     }
+  //   });
+  //   return diff_calculated_total_sum;
+  // };
 
-  let TotalDiff = getDiffTotal();
-  $(".diff-total").html(TotalDiff);
+  // let TotalDiff = getDiffTotal();
+  // $(".diff-total").html(TotalDiff);
 
-  $("#currentWeek").on("input", ".diff", function () {
-    let diffTotal = getDiffTotal();
-    $(".diff-total").html(diffTotal);
-  });
+  // $("#currentWeek").on("input", ".diff", function () {
+  //   let diffTotal = getDiffTotal();
+  //   $(".diff-total").html(diffTotal);
+  // });
 
   /*Sub Total Value*/
   const getSubTotalOfCurrentWeek = () => {
@@ -248,11 +274,6 @@ $(document).ready(function () {
       totalRst + totalRstPending + totalDp + totalHcb + totalMcb + totalLcb
     );
 
-    // $(".subTotal-final").html(
-    //   totalRst + totalRstPending + totalDp + totalHcb + totalMcb + totalLcb
-    // );
-
-    console.log("totalLcb: ", totalLcb);
     return null;
   };
 
