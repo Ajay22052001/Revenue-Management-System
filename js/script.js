@@ -1,5 +1,8 @@
 $(document).ready(function () {
   const subtractedTotal = (columnName, deliveryTotal, salesValue) => {
+    console.log("salesValue: ", salesValue);
+    console.log("deliveryTotal: ", deliveryTotal);
+    console.log("columnName: ", columnName);
     let subTotal = salesValue - deliveryTotal;
     $(columnName).html(subTotal);
   };
@@ -178,14 +181,10 @@ $(document).ready(function () {
   };
   /* get total*/
   const getTotal = (rowClass) => {
-    console.log("rowClass: ", rowClass);
     let calculated_total_sum = 0;
     let clickedClass = "#currentWeek " + rowClass;
-    console.log("clickedClass: ", clickedClass);
     $(clickedClass).each(function () {
       let get_textbox_value = $(this).html();
-      console.log("get_textbox_value: ", get_textbox_value);
-      console.log("this: ", this);
       if ($.isNumeric(get_textbox_value)) {
         calculated_total_sum += parseFloat(get_textbox_value);
       }
@@ -231,28 +230,45 @@ $(document).ready(function () {
   $("#currentWeek").on("input", ".p1-m1", function () {
     $(".p1-m1-total").html(getOpporuntityTotal(".p1-m1"));
     $(".p1-main-total").html(getTotal(".proj1-month-total"));
+    subtractedTotal(".sd-2", 8, $(".p1-m1-total").html());
+    $(".sd-total").html(getTotal(".sd"));
   });
   $(".p1-m2-total").html(getOpporuntityTotal(".p1-m2"));
   $("#currentWeek").on("input", ".p1-m2", function () {
     $(".p1-m2-total").html(getOpporuntityTotal(".p1-m2"));
     $(".p1-main-total").html(getTotal(".proj1-month-total"));
+    subtractedTotal(".sd-3", 9, $(".p1-m2-total").html());
+    $(".sd-total").html(getTotal(".sd"));
   });
   $(".p1-m3-total").html(getOpporuntityTotal(".p1-m3"));
   $("#currentWeek").on("input", ".p1-m3", function () {
     $(".p1-m3-total").html(getOpporuntityTotal(".p1-m3"));
     $(".p1-main-total").html(getTotal(".proj1-month-total"));
+    // subtractedTotal(".sd-4", 7, $(".p1-m3-total").html());
+    $(".sd-total").html(getTotal(".sd"));
   });
   $(".p1-col1-total").html(getOpporuntityTotal(".p1-col1"));
+
   $("#currentWeek").on("input", ".p1-col1", function () {
     $(".p1-col1-total").html(getOpporuntityTotal(".p1-col1"));
     $(".p1-main-total").html(getTotal(".proj1-month-total"));
-    $(".sd-total").html(getTotal(".sd"));
   });
+  // subtractedTotal(".sd-2", 8, $(".p1-m1-total").html());
+
+  // $(".sd-total").html(getTotal(".sd"));
+  // subtractedTotal(".sd-2", 8, $(".p1-m1-total").html());
+
+  // subtractedTotal(".sd-3", 9, $(".p1-m2-total").html());
+  // subtractedTotal(".sd-4", 7, $(".p1-m3-total").html());
+
+  // subtractedTotal(".sd-6", 58, $(".p2-m1-total").html());
+  // subtractedTotal(".sd-7", 58, $(".p2-m2-total").html());
+  // subtractedTotal(".sd-8", 57, $(".p2-m3-total").html());
+
   $(".p1-col2-total").html(getOpporuntityTotal(".p1-col2"));
   $("#currentWeek").on("input", ".p1-col2", function () {
     $(".p1-col2-total").html(getOpporuntityTotal(".p1-col2"));
     $(".p1-main-total").html(getTotal(".proj1-month-total"));
-    $(".sd-total").html(getTotal(".sd"));
   });
   $(".p1-col3-total").html(getOpporuntityTotal(".p1-col3"));
   $("#currentWeek").on("input", ".p1-col3", function () {
@@ -285,17 +301,24 @@ $(document).ready(function () {
   $("#currentWeek").on("input", ".p2-m1", function () {
     $(".p2-m1-total").html(getOpporuntityTotal(".p2-m1"));
     $(".p2-main-total").html(getTotal(".proj2-month-total"));
+    subtractedTotal(".sd-6", 58, $(".p2-m1-total").html());
+    $(".sd-total").html(getTotal(".sd"));
   });
   $(".p2-m2-total").html(getOpporuntityTotal(".p2-m2"));
   $("#currentWeek").on("input", ".p2-m2", function () {
     $(".p2-m2-total").html(getOpporuntityTotal(".p2-m2"));
     $(".p2-main-total").html(getTotal(".proj2-month-total"));
+    subtractedTotal(".sd-7", 58, $(".p2-m2-total").html());
+    $(".sd-total").html(getTotal(".sd"));
   });
   $(".p2-m3-total").html(getOpporuntityTotal(".p2-m3"));
   $("#currentWeek").on("input", ".p2-m3", function () {
     $(".p2-m3-total").html(getOpporuntityTotal(".p2-m3"));
     $(".p2-main-total").html(getTotal(".proj2-month-total"));
+    subtractedTotal(".sd-8", 57, $(".p2-m3-total").html());
+    $(".sd-total").html(getTotal(".sd"));
   });
+
   $(".p2-col1-total").html(getOpporuntityTotal(".p2-col1"));
   $("#currentWeek").on("input", ".p2-col1", function () {
     $(".p2-col1-total").html(getOpporuntityTotal(".p2-col1"));
