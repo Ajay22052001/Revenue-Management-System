@@ -490,4 +490,23 @@ $(document).ready(function () {
     e.preventDefault();
     $(".cat" + $(this).toggleClass("selected").attr("data-prod-cat")).toggle();
   });
+
+   
+
+  
 });
+
+// Date picker
+function datePicker() {
+  var d = document.getElementById("date-input").value;
+
+  // document.getElementById("selected-date").innerHTML = "Date: " + d;
+
+  if(d !== undefined){
+    var datearray = d.split("-");
+
+    var newdate = datearray[2] + '-' + datearray[1] + '-' + datearray[0];
+    console.log(newdate)
+      document.getElementById("selected-date").innerHTML = "Date: " + newdate;
+  }
+}

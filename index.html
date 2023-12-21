@@ -2,11 +2,14 @@
 <html lang="en">
 
 <head>
-    <title>Bootstrap Example</title>
+    <title>Revenue Management System</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
         integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+
+
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="js/script.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"
@@ -20,82 +23,79 @@
 
     <div class="container">
         <h4>Filters</h4>
-        <table class="table table-bordered table-striped table-responsive">
-            <!-- <thead>
-                <tr>
-                    <th>Firstname</th>
-                    <th>Lastname</th>
-                    <th>Email</th>
-                </tr>
-            </thead> -->
-            <tbody>
-                <tr>
-                    <td>
-                        <select class="form-control" id="exampleFormControlSelect1">
-                            <option>Quarter</option>
-                            <option>Quarter 1</option>
-                            <option>Quarter 2</option>
 
-                        </select>
-                    </td>
+        <div class="row">
+            <div class="col-md-4">
+                <select class="form-control" id="exampleFormControlSelect1">
+                    <option>Quarter</option>
+                    <option>Quarter 1</option>
+                    <option>Quarter 2</option>
 
-                    <td>
-                        <select class="form-control" id="exampleFormControlSelect1">
-                            <option>DH</option>
-                            <option>DH 1</option>
-                            <option>DH 2</option>
+                </select>
 
-                        </select>
-                    </td>
+                
+                
+            
+        </div>
+        <div class="col-md-4">
+            <select class="form-control" id="exampleFormControlSelect1">
+                <option>DH</option>
+                <option>DH 1</option>
+                <option>DH 2</option>
 
-                    <td>
-                        <select class="form-control" id="exampleFormControlSelect1">
-                            <option>DP</option>
-                            <option>DP 1</option>
-                            <option>DP 2</option>
+            </select>
+        </div>
+        <div class="col-md-4">
+            <select class="form-control" id="exampleFormControlSelect1">
+                <option>DP</option>
+                <option>DP 1</option>
+                <option>DP 2</option>
 
-                        </select>
-                    </td>
+            </select>
+        </div>
 
+    </div>
 
-                    <td>
-                        <select class="form-control" id="exampleFormControlSelect1">
-                            <option>Account 1</option>
-                            <option>Account 2</option>
-                            <option>Account 3</option>
-                        </select>
-                    </td>
-                    <td>
-                        <select class="form-control" id="exampleFormControlSelect1">
-                            <option>Project 1</option>
-                            <option>Project 2</option>
-                            <option>Project 3</option>
-                        </select>
-                    </td>
-                    <td>
-                        <select class="form-control" id="exampleFormControlSelect1">
-                            <option>Opportunity 1</option>
-                            <option>Opportunity 2</option>
-                            <option>Opportunity 3</option>
-                        </select>
-                    </td>
-                    <td>
+    <div class="row">
+        
+        <div class="col-md-4">
+            <select class="form-control" id="exampleFormControlSelect1">
+                <option>Account </option>
+                <option>Account 2</option>
+                <option>Account 3</option>
+            </select>
+        </div>
+        <div class="col-md-4">
+            <select class="form-control" id="exampleFormControlSelect1">
+                <option>Project </option>
+                <option>Project 2</option>
+                <option>Project 3</option>
+            </select>
+        </div>
 
-                        <select class="form-control" id="exampleFormControlSelect1">
-                            <option>Sales Person</option>
-                            <option>Sales Person 1</option>
-                            <option>Sales Person 2</option>
+        <div class="col-md-4">
+            <select class="form-control" id="exampleFormControlSelect1">
+                <option>Opportunity </option>
+                <option>Opportunity 2</option>
+                <option>Opportunity 3</option>
+            </select>
+        </div>
+        
+        
+    </div>
+   
 
-                        </select>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
+    <hr class="hr-orange">
 
-        <h4>Last weeks Number </h4>
+       
+            <h4  class="lastweektable">Last weeks Number </h4>   
+            <span id="selected-date" class="lastweektable"></span>    
+            <span class="lastweektable" style="float: right; padding-bottom: 1em;">Choose the date <input id="date-input" size="16" type="date" value="12-02-2012" onchange="datePicker()"/></span>
+        
+        
         <table class="table table-bordered table-responsive ">
             <thead>
-                <th style=" width: 28%;" class="bg-primary"><span class="expandChildTable"
+                <th style=" width: 50%;" class="bg-primary"><span class="expandChildTable"
                         data-prod-cat="3"></span>Projects</th>
                 <th class="bg-primary">Booking (SFDC) / Sales Commit</th>
                 <th class="bg-primary">RTS (Firm + Likely) / RR</th>
@@ -300,11 +300,14 @@
 
         </table>
 
+        <hr class="hr-orange">
+
         <h4>Current weeks Number </h4>
         <table class="table table-bordered table-responsive " id="currentWeek">
             <thead>
                 <tr>
-                    <th class="bg-primary">Projects</th>
+                    <th class="bg-primary" style=" width: 50%;"><span class="expandChildTable"
+                        data-prod-cat="4">Projects</th>
                     <th class="bg-primary">Booking (SFDC) / Sales Commit</th>
                     <th class="bg-primary">RTS / RR </th>
                     <th class="bg-primary">RTS Pending </th>
@@ -318,7 +321,7 @@
                     <th class="bg-primary">Difference (Sale - Delivery)</th>
                 </tr>
             </thead>
-            <tbody>
+            <tbody class="childTableRow cat4">
                 <tr>
                     <td class="font-weight-bold">Project Name 1</td>
                     <td>
@@ -732,6 +735,8 @@
                 </tr>
             </tbody>
         </table>
+
+        <hr class="hr-orange">
         <h4></h4>
         <table class="table table-bordered table-striped table-responsive " id="total">
 
@@ -805,6 +810,8 @@
                 </tr>
             </tbody>
         </table>
+
+        <hr class="hr-orange">
     </div>
 
 </body>
