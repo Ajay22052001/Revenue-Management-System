@@ -246,11 +246,13 @@ $(document).ready(function () {
   $("#currentWeek").on("input", ".p1-col1", function () {
     $(".p1-col1-total").html(getOpporuntityTotal(".p1-col1"));
     $(".p1-main-total").html(getTotal(".proj1-month-total"));
+    $(".sd-total").html(getTotal(".sd"));
   });
   $(".p1-col2-total").html(getOpporuntityTotal(".p1-col2"));
   $("#currentWeek").on("input", ".p1-col2", function () {
     $(".p1-col2-total").html(getOpporuntityTotal(".p1-col2"));
     $(".p1-main-total").html(getTotal(".proj1-month-total"));
+    $(".sd-total").html(getTotal(".sd"));
   });
   $(".p1-col3-total").html(getOpporuntityTotal(".p1-col3"));
   $("#currentWeek").on("input", ".p1-col3", function () {
@@ -362,25 +364,39 @@ $(document).ready(function () {
     $(".bq3").val()
   );
 
+  subtractedTotal(".sd-1", 5, $(".p1-main-total").html());
+  subtractedTotal(".sd-2", 8, $(".p1-m1-total").html());
+  subtractedTotal(".sd-3", 9, $(".p1-m2-total").html());
+  subtractedTotal(".sd-4", 7, $(".p1-m3-total").html());
+  subtractedTotal(".sd-5", 5, $(".p2-main-total").html());
+  subtractedTotal(".sd-6", 58, $(".p2-m1-total").html());
+  subtractedTotal(".sd-7", 58, $(".p2-m2-total").html());
+  subtractedTotal(".sd-8", 57, $(".p2-m3-total").html());
+
   /*SD Column Total*/
-  const getSdTotal = () => {
-    let sd_calculated_total_sum = 0;
-    $("#currentWeek .sd").each(function () {
-      let get_sd_textbox_value = $(this).val();
-      if ($.isNumeric(get_sd_textbox_value)) {
-        sd_calculated_total_sum += parseFloat(get_sd_textbox_value);
-      }
-    });
-    return sd_calculated_total_sum;
-  };
-
-  let TotalSd = getSdTotal();
-  $(".sd-total").html(TotalSd);
-
+  $(".sd-total").html(getTotal(".sd"));
   $("#currentWeek").on("input", ".sd", function () {
-    let sdTotal = getSdTotal();
-    $(".sd-total").html(sdTotal);
+    $(".sd-total").html(getTotal(".sd"));
   });
+  /*SD Column Total*/
+  // const getSdTotal = () => {
+  //   let sd_calculated_total_sum = 0;
+  //   $("#currentWeek .sd").each(function () {
+  //     let get_sd_textbox_value = $(this).val();
+  //     if ($.isNumeric(get_sd_textbox_value)) {
+  //       sd_calculated_total_sum += parseFloat(get_sd_textbox_value);
+  //     }
+  //   });
+  //   return sd_calculated_total_sum;
+  // };
+
+  // let TotalSd = getSdTotal();
+  // $(".sd-total").html(TotalSd);
+
+  // $("#currentWeek").on("input", ".sd", function () {
+  //   let sdTotal = getSdTotal();
+  //   $(".sd-total").html(sdTotal);
+  // });
 
   /*Diff Column Total*/
   // const getDiffTotal = () => {
@@ -427,30 +443,28 @@ $(document).ready(function () {
   getSubTotalOfCurrentWeek();
 
   // Collapsible rows
-  $('.hidden-row tr:not(.total)').hide();
+  $(".hidden-row tr:not(.total)").hide();
 
   // $('tr.header').click(function() {
   //   console.log("clicked")
   //   $(this).find('span').text(function(_, value) {
   //     return value == '+' ? '-' : '+'
   //   });
-    
+
   //   $(this).nextUntil('tr.header').slideToggle(200, function() {});
   // });
 
-  $(function() {
-    $('th.expandChildTable').on('click', function() {  
+  $(function () {
+    $("th.expandChildTable").on("click", function () {
       // $(this).parent().next("tr").toggle();
 
       // $(this).nextUntil('tr.newproject').toggle();
-        $(this).toggleClass('selected').nextUntil('tr.total').next().toggle();
-    })
-});
+      $(this).toggleClass("selected").nextUntil("tr.total").next().toggle();
+    });
+  });
 
-
-$(".expandChildTable").click(function(e){
-  e.preventDefault();
-  $('.cat'+$(this).toggleClass('selected').attr('data-prod-cat')).toggle();
-});
-             
+  $(".expandChildTable").click(function (e) {
+    e.preventDefault();
+    $(".cat" + $(this).toggleClass("selected").attr("data-prod-cat")).toggle();
+  });
 });
