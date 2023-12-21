@@ -163,7 +163,7 @@ $(document).ready(function () {
     getSubTotalOfCurrentWeek();
   });
 
-  /* opporuntity*/
+  /* get*/
   const getOpporuntityTotal = (rowClass) => {
     let calculated_total_sum = 0;
     let clickedClass = "#currentWeek " + rowClass;
@@ -176,27 +176,163 @@ $(document).ready(function () {
 
     return calculated_total_sum;
   };
+  /* get total*/
+  const getTotal = (rowClass) => {
+    console.log("rowClass: ", rowClass);
+    let calculated_total_sum = 0;
+    let clickedClass = "#currentWeek " + rowClass;
+    console.log("clickedClass: ", clickedClass);
+    $(clickedClass).each(function () {
+      let get_textbox_value = $(this).html();
+      console.log("get_textbox_value: ", get_textbox_value);
+      console.log("this: ", this);
+      if ($.isNumeric(get_textbox_value)) {
+        calculated_total_sum += parseFloat(get_textbox_value);
+      }
+    });
+
+    return calculated_total_sum;
+  };
 
   $(".opporuntity-1-total").html(getOpporuntityTotal(".opporuntity-1"));
   $("#currentWeek").on("input", ".opporuntity-1", function () {
     $(".opporuntity-1-total").html(getOpporuntityTotal(".opporuntity-1"));
-    subtractedTotal(".q1-diff-sd-total", $(".opporuntity-1-total").html(), 8);
+    subtractedTotal(
+      ".q1-diff-sd-total",
+      $(".opporuntity-1-total").html(),
+      $(".bq1").val()
+    );
     $(".dt-total").html(getSubTotal(".dt"));
   });
 
   $(".opporuntity-2-total").html(getOpporuntityTotal(".opporuntity-2"));
   $("#currentWeek").on("input", ".opporuntity-2", function () {
     $(".opporuntity-2-total").html(getOpporuntityTotal(".opporuntity-2"));
-    subtractedTotal(".q2-diff-sd-total", $(".opporuntity-2-total").html(), 5);
+    subtractedTotal(
+      ".q2-diff-sd-total",
+      $(".opporuntity-2-total").html(),
+      $(".bq2").val()
+    );
     $(".dt-total").html(getSubTotal(".dt"));
   });
 
   $(".opporuntity-3-total").html(getOpporuntityTotal(".opporuntity-3"));
   $("#currentWeek").on("input", ".opporuntity-3", function () {
     $(".opporuntity-3-total").html(getOpporuntityTotal(".opporuntity-3"));
-    subtractedTotal(".q3-diff-sd-total", $(".opporuntity-3-total").html(), 4);
+    subtractedTotal(
+      ".q3-diff-sd-total",
+      $(".opporuntity-3-total").html(),
+      $(".bq3").val()
+    );
     $(".dt-total").html(getSubTotal(".dt"));
   });
+
+  $(".p1-m1-total").html(getOpporuntityTotal(".p1-m1"));
+  $("#currentWeek").on("input", ".p1-m1", function () {
+    $(".p1-m1-total").html(getOpporuntityTotal(".p1-m1"));
+    $(".p1-main-total").html(getTotal(".proj1-month-total"));
+  });
+  $(".p1-m2-total").html(getOpporuntityTotal(".p1-m2"));
+  $("#currentWeek").on("input", ".p1-m2", function () {
+    $(".p1-m2-total").html(getOpporuntityTotal(".p1-m2"));
+    $(".p1-main-total").html(getTotal(".proj1-month-total"));
+  });
+  $(".p1-m3-total").html(getOpporuntityTotal(".p1-m3"));
+  $("#currentWeek").on("input", ".p1-m3", function () {
+    $(".p1-m3-total").html(getOpporuntityTotal(".p1-m3"));
+    $(".p1-main-total").html(getTotal(".proj1-month-total"));
+  });
+  $(".p1-col1-total").html(getOpporuntityTotal(".p1-col1"));
+  $("#currentWeek").on("input", ".p1-col1", function () {
+    $(".p1-col1-total").html(getOpporuntityTotal(".p1-col1"));
+    $(".p1-main-total").html(getTotal(".proj1-month-total"));
+  });
+  $(".p1-col2-total").html(getOpporuntityTotal(".p1-col2"));
+  $("#currentWeek").on("input", ".p1-col2", function () {
+    $(".p1-col2-total").html(getOpporuntityTotal(".p1-col2"));
+    $(".p1-main-total").html(getTotal(".proj1-month-total"));
+  });
+  $(".p1-col3-total").html(getOpporuntityTotal(".p1-col3"));
+  $("#currentWeek").on("input", ".p1-col3", function () {
+    $(".p1-col3-total").html(getOpporuntityTotal(".p1-col3"));
+    $(".p1-main-total").html(getTotal(".proj1-month-total"));
+  });
+  $(".p1-col4-total").html(getOpporuntityTotal(".p1-col4"));
+  $("#currentWeek").on("input", ".p1-col4", function () {
+    $(".p1-col4-total").html(getOpporuntityTotal(".p1-col4"));
+    $(".p1-main-total").html(getTotal(".proj1-month-total"));
+  });
+  $(".p1-col5-total").html(getOpporuntityTotal(".p1-col5"));
+  $("#currentWeek").on("input", ".p1-col5", function () {
+    $(".p1-col5-total").html(getOpporuntityTotal(".p1-col5"));
+    $(".p1-main-total").html(getTotal(".proj1-month-total"));
+  });
+  $(".p1-col6-total").html(getOpporuntityTotal(".p1-col6"));
+  $("#currentWeek").on("input", ".p1-col6", function () {
+    $(".p1-col6-total").html(getOpporuntityTotal(".p1-col6"));
+    $(".p1-main-total").html(getTotal(".proj1-month-total"));
+  });
+  $(".p1-col7-total").html(getOpporuntityTotal(".p1-col7"));
+  $("#currentWeek").on("input", ".p1-col7", function () {
+    $(".p1-col7-total").html(getOpporuntityTotal(".p1-col7"));
+    $(".p1-main-total").html(getTotal(".proj1-month-total"));
+  });
+  $(".p1-main-total").html(getTotal(".proj1-month-total"));
+
+  $(".p2-m1-total").html(getOpporuntityTotal(".p2-m1"));
+  $("#currentWeek").on("input", ".p2-m1", function () {
+    $(".p2-m1-total").html(getOpporuntityTotal(".p2-m1"));
+    $(".p2-main-total").html(getTotal(".proj2-month-total"));
+  });
+  $(".p2-m2-total").html(getOpporuntityTotal(".p2-m2"));
+  $("#currentWeek").on("input", ".p2-m2", function () {
+    $(".p2-m2-total").html(getOpporuntityTotal(".p2-m2"));
+    $(".p2-main-total").html(getTotal(".proj2-month-total"));
+  });
+  $(".p2-m3-total").html(getOpporuntityTotal(".p2-m3"));
+  $("#currentWeek").on("input", ".p2-m3", function () {
+    $(".p2-m3-total").html(getOpporuntityTotal(".p2-m3"));
+    $(".p2-main-total").html(getTotal(".proj2-month-total"));
+  });
+  $(".p2-col1-total").html(getOpporuntityTotal(".p2-col1"));
+  $("#currentWeek").on("input", ".p2-col1", function () {
+    $(".p2-col1-total").html(getOpporuntityTotal(".p2-col1"));
+    $(".p2-main-total").html(getTotal(".proj2-month-total"));
+  });
+  $(".p2-col2-total").html(getOpporuntityTotal(".p2-col2"));
+  $("#currentWeek").on("input", ".p2-col2", function () {
+    $(".p2-col2-total").html(getOpporuntityTotal(".p2-col2"));
+    $(".p2-main-total").html(getTotal(".proj2-month-total"));
+  });
+  $(".p2-col3-total").html(getOpporuntityTotal(".p2-col3"));
+  $("#currentWeek").on("input", ".p2-col3", function () {
+    $(".p2-col3-total").html(getOpporuntityTotal(".p2-col3"));
+    $(".p2-main-total").html(getTotal(".proj2-month-total"));
+  });
+  $(".p2-col4-total").html(getOpporuntityTotal(".p2-col4"));
+  $("#currentWeek").on("input", ".p2-col4", function () {
+    $(".p2-col4-total").html(getOpporuntityTotal(".p2-col4"));
+    $(".p2-main-total").html(getTotal(".proj2-month-total"));
+  });
+  $(".p2-col5-total").html(getOpporuntityTotal(".p2-col5"));
+  $("#currentWeek").on("input", ".p2-col5", function () {
+    $(".p2-col5-total").html(getOpporuntityTotal(".p2-col5"));
+    $(".p2-main-total").html(getTotal(".proj2-month-total"));
+  });
+  $(".p2-col6-total").html(getOpporuntityTotal(".p2-col6"));
+  $("#currentWeek").on("input", ".p2-col6", function () {
+    $(".p2-col6-total").html(getOpporuntityTotal(".p2-col6"));
+    $(".p2-main-total").html(getTotal(".proj2-month-total"));
+  });
+  $(".p2-col7-total").html(getOpporuntityTotal(".p2-col7"));
+  $("#currentWeek").on("input", ".p2-col7", function () {
+    $(".p2-col7-total").html(getOpporuntityTotal(".p2-col7"));
+    $(".p2-main-total").html(getTotal(".proj2-month-total"));
+  });
+  $(".p2-main-total").html(getTotal(".proj2-month-total"));
+  // $("#currentWeek").on("input", ".proj2-month-total", function () {
+  //   $(".p2-main-total").html(getOpporuntityTotal(".proj2-month-total"));
+  // });
 
   /*SubTotal Column Total*/
 
