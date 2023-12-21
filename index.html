@@ -95,7 +95,7 @@
         
         <table class="table table-bordered table-responsive ">
             <thead>
-                <th style=" width: 50%;" class="bg-primary"><span class="expandChildTable"
+                <th style=" width: 40%;" class="bg-primary"><span class="expandChildTable"
                         data-prod-cat="3"></span>Projects</th>
                 <th class="bg-primary">Booking (SFDC) / Sales Commit</th>
                 <th class="bg-primary">RTS (Firm + Likely) / RR</th>
@@ -306,7 +306,7 @@
         <table class="table table-bordered table-responsive " id="currentWeek">
             <thead>
                 <tr>
-                    <th class="bg-primary" style=" width: 50%;"><span class="expandChildTable"
+                    <th class="bg-primary" style=" width: 40%;"><span class="expandChildTable"
                         data-prod-cat="4">Projects</th>
                     <th class="bg-primary">Booking (SFDC) / Sales Commit</th>
                     <th class="bg-primary">RTS / RR </th>
@@ -323,7 +323,8 @@
             </thead>
             <tbody class="childTableRow cat4">
                 <tr>
-                    <td class="font-weight-bold">Project Name 1</td>
+                    <td class="font-weight-bold"><span class="expandChildTable"
+                        data-prod-cat="5">Project Name 1</td>
                     <td>
                         <div class="p1-col1-total"></div>
                         <!-- <input type="text" value="70" class="form-control booking " id="pn1" placeholder=""> -->
@@ -360,13 +361,13 @@
                         <!-- <input type="text" value="11" class="form-control diff"> -->
                     </td>
                 </tr>
-                <tr>
+                <tr class="childTableRow cat5">
                     <td class="font-weight-bold">Month 1</td>
                     <td>
-                        <input type="text" value="110" class="form-control booking p1-col1" id="pn2" placeholder="">
+                        <input type="text" value="110" class="form-control booking p1-col1" id="pn2" placeholder="" disabled>
                     </td>
                     <td>
-                        <input type="text" value="114" class="form-control rst p1-m1 p1-col2">
+                        <input type="text" value="114" class="form-control rst p1-m1 p1-col2" disabled>
                     </td>
                     <td>
                         <input type="text" value="223" class="form-control rst-pending p1-m1 p1-col3">
@@ -396,13 +397,13 @@
                         <!-- <input type="text" value="22" class="form-control diff"> -->
                     </td>
                 </tr>
-                <tr>
+                <tr class="childTableRow cat5">
                     <td class="font-weight-bold">Month 2</td>
                     <td>
-                        <input type="text" value="115" class="form-control p1-col1">
+                        <input type="text" value="115" class="form-control p1-col1" disabled>
                     </td>
                     <td>
-                        <input type="text" value="150" class="form-control rst p1-m2 p1-col2">
+                        <input type="text" value="150" class="form-control rst p1-m2 p1-col2" disabled>
                     </td>
                     <td>
                         <input type="text" value="324" class="form-control rst-pending p1-m2 p1-col3">
@@ -432,13 +433,13 @@
                         <!-- <input type="text" value="33" class="form-control diff"> -->
                     </td>
                 </tr>
-                <tr>
+                <tr class="childTableRow cat5">
                     <td class="font-weight-bold">Month 3</td>
                     <td>
-                        <input type="text" value="177" class="form-control p1-col1">
+                        <input type="text" value="177" class="form-control p1-col1" disabled>
                     </td>
                     <td>
-                        <input type="text" value="212" class="form-control rst p1-m3 p1-col2">
+                        <input type="text" value="212" class="form-control rst p1-m3 p1-col2" disabled>
                     </td>
                     <td>
                         <input type="text" value="345" class="form-control rst-pending p1-m3 p1-col3">
@@ -470,7 +471,8 @@
 
 
                 <tr>
-                    <td class="font-weight-bold">Project Name 2</td>
+                    <td class="font-weight-bold"><span class="expandChildTable"
+                        data-prod-cat="6">Project Name 2</td>
                     <td>
                         <div class="p2-col1-total"></div>
                         <!-- <input type="text" value="70" class="form-control booking " id="pn1" placeholder=""> -->
@@ -507,13 +509,13 @@
                         <!-- <input type="text" value="11" class="form-control diff"> -->
                     </td>
                 </tr>
-                <tr>
+                <tr class="childTableRow cat6">
                     <td class="font-weight-bold">Month 1</td>
                     <td>
-                        <input type="text" value="510" class="form-control booking p2-col1" id="pn2" placeholder="">
+                        <input type="text" value="510" class="form-control booking p2-col1" id="pn2" placeholder="" disabled>
                     </td>
                     <td>
-                        <input type="text" value="914" class="form-control rst p2-m1 p2-col2">
+                        <input type="text" value="914" class="form-control rst p2-m1 p2-col2" disabled>
                     </td>
                     <td>
                         <input type="text" value="823" class="form-control rst-pending p2-m1 p2-col3">
@@ -543,13 +545,13 @@
                         <!-- <input type="text" value="22" class="form-control diff"> -->
                     </td>
                 </tr>
-                <tr>
+                <tr class="childTableRow cat6">
                     <td class="font-weight-bold">Month 2</td>
                     <td>
-                        <input type="text" value="215" class="form-control p2-col1">
+                        <input type="text" value="215" class="form-control p2-col1" disabled>
                     </td>
                     <td>
-                        <input type="text" value="550" class="form-control rst p2-m2 p2-col2">
+                        <input type="text" value="550" class="form-control rst p2-m2 p2-col2" disabled>
                     </td>
                     <td>
                         <input type="text" value="624" class="form-control rst-pending p2-m2 p2-col3">
@@ -579,13 +581,13 @@
                         <!-- <input type="text" value="33" class="form-control diff"> -->
                     </td>
                 </tr>
-                <tr>
+                <tr class="childTableRow cat6">
                     <td class="font-weight-bold">Month 3</td>
                     <td>
-                        <input type="text" value="277" class="form-control p2-col1">
+                        <input type="text" value="277" class="form-control p2-col1" disabled>
                     </td>
                     <td>
-                        <input type="text" value="312" class="form-control rst p2-m3 p2-col2">
+                        <input type="text" value="312" class="form-control rst p2-m3 p2-col2" disabled>
                     </td>
                     <td>
                         <input type="text" value="145" class="form-control rst-pending p2-m3 p2-col3">
@@ -619,10 +621,10 @@
                 <tr>
                     <td class="font-weight-bold">Opporuntity Name 1</td>
                     <td>
-                        <input type="text" value="2221" class="form-control booking bq1">
+                        <input type="text" value="2221" class="form-control booking bq1" disabled>
                     </td>
                     <td>
-                        <input type="text" value="" class="form-control rst opporuntity-1">
+                        <input type="text" value="" class="form-control rst opporuntity-1" disabled>
                     </td>
                     <td>
                         <input type="text" value="" class="form-control rst-pending opporuntity-1">
@@ -653,10 +655,10 @@
                 <tr>
                     <td class="font-weight-bold">Opporuntity Name 2</td>
                     <td>
-                        <input type="text" value="2230" class="form-control booking bq2 ">
+                        <input type="text" value="2230" class="form-control booking bq2 " disabled>
                     </td>
                     <td>
-                        <input type="text" value="" class="form-control rst opporuntity-2">
+                        <input type="text" value="" class="form-control rst opporuntity-2" disabled>
                     </td>
                     <td>
                         <input type="text" value="" class="form-control rst-pending opporuntity-2">
@@ -687,10 +689,10 @@
                 <tr>
                     <td class="font-weight-bold">Opporuntity Name 3</td>
                     <td>
-                        <input type="text" value="2275" class="form-control booking bq3 ">
+                        <input type="text" value="2275" class="form-control booking bq3 " disabled>
                     </td>
                     <td>
-                        <input type="text" value="" class="form-control rst opporuntity-3">
+                        <input type="text" value="" class="form-control rst opporuntity-3" disabled>
                     </td>
                     <td>
                         <input type="text" value="" class="form-control rst-pending opporuntity-3">
@@ -718,6 +720,9 @@
                         <div class="diff q3-diff-sd-total"></div>
                     </td>
                 </tr>
+                
+            </tbody>
+            <tbody>
                 <tr>
                     <td class="bg-success font-weight-bold">Total</td>
                     <td class="booking-total bg-success ">booking-total</td>
@@ -737,7 +742,7 @@
         </table>
 
         <hr class="hr-orange">
-        <h4></h4>
+        <h4>Week on Week</h4>
         <table class="table table-bordered table-striped table-responsive " id="total">
 
             <tbody>
@@ -763,6 +768,15 @@
                     <td></td>
                     <td></td>
                 </tr>
+                
+                
+            </tbody>
+        </table>
+        <hr class="hr-orange">
+
+        <h4>Quarter on Quarter</h4>
+        <table class="table table-bordered table-striped table-responsive " id="total">
+            <tbody>
                 <tr>
                     <td class="font-weight-bold">Last Quarter </td>
                     <td>10</td>
@@ -785,6 +799,13 @@
                     <td></td>
                     <td></td>
                 </tr>
+            </tbody>
+        </table>
+        <hr class="hr-orange">
+
+        <h4>Target </h4>
+        <table class="table table-bordered table-striped table-responsive " id="total">
+            <tbody>
                 <tr>
                     <td class="font-weight-bold">Target </td>
                     <td>10</td>
