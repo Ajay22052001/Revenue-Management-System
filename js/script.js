@@ -289,4 +289,32 @@ $(document).ready(function () {
   };
 
   getSubTotalOfCurrentWeek();
+
+  // Collapsible rows
+  $('.hidden-row tr:not(.total)').hide();
+
+  // $('tr.header').click(function() {
+  //   console.log("clicked")
+  //   $(this).find('span').text(function(_, value) {
+  //     return value == '+' ? '-' : '+'
+  //   });
+    
+  //   $(this).nextUntil('tr.header').slideToggle(200, function() {});
+  // });
+
+  $(function() {
+    $('th.expandChildTable').on('click', function() {  
+      // $(this).parent().next("tr").toggle();
+
+      // $(this).nextUntil('tr.newproject').toggle();
+        $(this).toggleClass('selected').nextUntil('tr.total').next().toggle();
+    })
+});
+
+
+$(".expandChildTable").click(function(e){
+  e.preventDefault();
+  $('.cat'+$(this).toggleClass('selected').attr('data-prod-cat')).toggle();
+});
+             
 });

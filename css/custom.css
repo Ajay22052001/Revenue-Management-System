@@ -7,9 +7,30 @@
 }
 .table th{
     vertical-align: middle !important;
-    text-align: center !important;
+    
     /* width: 28%; */
 }
 td:nth-child(1) {  
     text-align: center;
   }
+
+  .expandChildTable:before {
+    content: "+";
+    cursor: pointer;
+    color: green;
+    font-size: 20px;
+    text-align: left;
+    margin-right: 1em;
+    
+}
+.expandChildTable.selected:before {
+    content: "-";
+    color: red;
+    font-size: 20px;
+    text-align: left;
+    margin-right: 1em;
+    
+}
+.childTableRow {
+    display: none;
+}
