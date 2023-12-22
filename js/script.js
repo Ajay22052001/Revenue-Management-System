@@ -1,9 +1,15 @@
 $(document).ready(function () {
   const subtractedTotal = (columnName, deliveryTotal, salesValue) => {
-    console.log("salesValue: ", salesValue);
-    console.log("deliveryTotal: ", deliveryTotal);
-    console.log("columnName: ", columnName);
     let subTotal = salesValue - deliveryTotal;
+    $(columnName).html(subTotal);
+  };
+  const weekOnWeeksubtractedTotal = (columnName, currentWeek, lastWeek) => {
+    let subTotal = currentWeek - lastWeek;
+    $(columnName).html(subTotal);
+  };
+
+  const getWoWTotal = (columnName, currentWeek, lastWeek) => {
+    let subTotal = parseInt(currentWeek) + parseInt(lastWeek);
     $(columnName).html(subTotal);
   };
 
@@ -233,6 +239,8 @@ $(document).ready(function () {
     subtractedTotal(".sd-2", 8, $(".p1-m1-total").html());
     $(".sd-total").html(getTotal(".sd"));
   });
+  $(".sd-total").html(13);
+
   $(".p1-m2-total").html(getOpporuntityTotal(".p1-m2"));
   $("#currentWeek").on("input", ".p1-m2", function () {
     $(".p1-m2-total").html(getOpporuntityTotal(".p1-m2"));
@@ -253,17 +261,6 @@ $(document).ready(function () {
     $(".p1-col1-total").html(getOpporuntityTotal(".p1-col1"));
     $(".p1-main-total").html(getTotal(".proj1-month-total"));
   });
-  // subtractedTotal(".sd-2", 8, $(".p1-m1-total").html());
-
-  // $(".sd-total").html(getTotal(".sd"));
-  // subtractedTotal(".sd-2", 8, $(".p1-m1-total").html());
-
-  // subtractedTotal(".sd-3", 9, $(".p1-m2-total").html());
-  // subtractedTotal(".sd-4", 7, $(".p1-m3-total").html());
-
-  // subtractedTotal(".sd-6", 58, $(".p2-m1-total").html());
-  // subtractedTotal(".sd-7", 58, $(".p2-m2-total").html());
-  // subtractedTotal(".sd-8", 57, $(".p2-m3-total").html());
 
   $(".p1-col2-total").html(getOpporuntityTotal(".p1-col2"));
   $("#currentWeek").on("input", ".p1-col2", function () {
@@ -396,50 +393,79 @@ $(document).ready(function () {
   subtractedTotal(".sd-7", 1165, $(".p2-m2-total").html());
   subtractedTotal(".sd-8", 450, $(".p2-m3-total").html());
 
-  /*SD Column Total*/
-  $(".sd-total").html(getTotal(".sd"));
-  $("#currentWeek").on("input", ".sd", function () {
-    $(".sd-total").html(getTotal(".sd"));
-  });
-  /*SD Column Total*/
-  // const getSdTotal = () => {
-  //   let sd_calculated_total_sum = 0;
-  //   $("#currentWeek .sd").each(function () {
-  //     let get_sd_textbox_value = $(this).val();
-  //     if ($.isNumeric(get_sd_textbox_value)) {
-  //       sd_calculated_total_sum += parseFloat(get_sd_textbox_value);
-  //     }
-  //   });
-  //   return sd_calculated_total_sum;
-  // };
+  /*Week on week */
+  weekOnWeeksubtractedTotal(
+    ".wow-r2-1",
+    $(".booking-total").html(),
+    $(".last-booking-total").html()
+  );
+  weekOnWeeksubtractedTotal(
+    ".wow-r2-2",
+    $(".rst-total").html(),
+    $(".last-rst-total").html()
+  );
+  weekOnWeeksubtractedTotal(
+    ".wow-r2-3",
+    $(".rst-pending-total").html(),
+    $(".last-rst-pending-total").html()
+  );
+  weekOnWeeksubtractedTotal(
+    ".wow-r2-4",
+    $(".dp-total").html(),
+    $(".last-dp-total").html()
+  );
+  weekOnWeeksubtractedTotal(
+    ".wow-r2-5",
+    $(".hcb-total").html(),
+    $(".last-hcb-total").html()
+  );
+  weekOnWeeksubtractedTotal(
+    ".wow-r2-6",
+    $(".mcb-total").html(),
+    $(".last-mcb-total").html()
+  );
+  weekOnWeeksubtractedTotal(
+    ".wow-r2-7",
+    $(".lcb-total").html(),
+    $(".last-lcb-total").html()
+  );
+  weekOnWeeksubtractedTotal(
+    ".wow-r2-8",
+    $(".dt-total").html(),
+    $(".last-dt-total").html()
+  );
+  weekOnWeeksubtractedTotal(
+    ".wow-r2-10",
+    53,
+    // $(".sd-total").html(),
+    $(".last-sd-total").html()
+  );
+  weekOnWeeksubtractedTotal(
+    ".wow-r2-11",
+    $(".sdt-total").html(),
+    $(".last-sdt-total").html()
+  );
 
-  // let TotalSd = getSdTotal();
-  // $(".sd-total").html(TotalSd);
-
-  // $("#currentWeek").on("input", ".sd", function () {
-  //   let sdTotal = getSdTotal();
-  //   $(".sd-total").html(sdTotal);
-  // });
-
-  /*Diff Column Total*/
-  // const getDiffTotal = () => {
-  //   let diff_calculated_total_sum = 0;
-  //   $("#currentWeek .diff").each(function () {
-  //     let get_diff_textbox_value = $(this).val();
-  //     if ($.isNumeric(get_diff_textbox_value)) {
-  //       diff_calculated_total_sum += parseFloat(get_diff_textbox_value);
-  //     }
-  //   });
-  //   return diff_calculated_total_sum;
-  // };
-
-  // let TotalDiff = getDiffTotal();
-  // $(".diff-total").html(TotalDiff);
-
-  // $("#currentWeek").on("input", ".diff", function () {
-  //   let diffTotal = getDiffTotal();
-  //   $(".diff-total").html(diffTotal);
-  // });
+  getWoWTotal(
+    ".subTotal-final",
+    $(".sdt-total").html(),
+    $(".last-sdt-total").html()
+  );
+  getWoWTotal(
+    ".subTotal-sd",
+    $(".sd-total").html(),
+    $(".last-sd-total").html()
+  );
+  getWoWTotal(
+    ".subTotal-dt",
+    $(".dt-total").html(),
+    $(".last-dt-total").html()
+  );
+  getWoWTotal(
+    ".subTotal-booking",
+    $(".booking-total").html(),
+    $(".last-booking-total").html()
+  );
 
   /*Sub Total Value*/
   const getSubTotalOfCurrentWeek = () => {
@@ -490,10 +516,6 @@ $(document).ready(function () {
     e.preventDefault();
     $(".cat" + $(this).toggleClass("selected").attr("data-prod-cat")).toggle();
   });
-
-   
-
-  
 });
 
 // Date picker
@@ -502,11 +524,11 @@ function datePicker() {
 
   // document.getElementById("selected-date").innerHTML = "Date: " + d;
 
-  if(d !== undefined){
+  if (d !== undefined) {
     var datearray = d.split("-");
 
-    var newdate = datearray[2] + '-' + datearray[1] + '-' + datearray[0];
-    console.log(newdate)
-      document.getElementById("selected-date").innerHTML = "Date: " + newdate;
+    var newdate = datearray[2] + "-" + datearray[1] + "-" + datearray[0];
+    console.log(newdate);
+    document.getElementById("selected-date").innerHTML = "Date: " + newdate;
   }
 }
