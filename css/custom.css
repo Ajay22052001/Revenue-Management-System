@@ -1,15 +1,18 @@
 .table td {
     width: 10%;
     text-align: right;
+    vertical-align: middle;
 }
 .table{
     font-size: 12px;
 }
 .table th{
     vertical-align: middle !important;
-    
+    text-align: center;
     /* width: 28%; */
 }
+
+
 td:nth-child(1) {  
     text-align: left;
   }
@@ -20,7 +23,9 @@ td:nth-child(1) {
     color: green;
     font-size: 20px;
     text-align: left;
-    margin-right: 1em;
+    margin-right: 0.7em;
+    /* float: left; */
+    /* vertical-align: middle; */
     
 }
 .expandChildTable.selected:before {
@@ -29,6 +34,8 @@ td:nth-child(1) {
     font-size: 20px;
     text-align: left;
     margin-right: 1em;
+    /* float: left; */
+    /* vertical-align: middle; */
     
 }
 .childTableRow {
@@ -70,3 +77,6 @@ td:nth-child(1) {
     padding: 0.3rem;
 }
 
+.pad-left{
+    padding-left: 2.8em !important;
+}

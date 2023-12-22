@@ -96,10 +96,10 @@
 
         <table class="table table-bordered table-responsive ">
             <thead>
-                <th style=" width: 40%;" class="bg-primary"><span class="expandChildTable"
-                        data-prod-cat="3"></span>Projects</th>
-                <th class="bg-primary">Booking (SFDC) / Sales Commit</th>
-                <th class="bg-primary">RTS (Firm + Likely) / RR</th>
+                <th style=" width: 33%; text-align: left;" class="bg-primary"><span class="expandChildTable"
+                        data-prod-cat="3"></span><span style="margin-left: 7em;">Projects</span></th>
+                <th class="bg-primary">Bookings (SFDC)</th>
+                <th class="bg-primary">RTS / RR</th>
                 <th class="bg-primary">RTS Pending</th>
                 <th class="bg-primary">DP</th>
                 <th class="bg-primary">HCB</th>
@@ -107,7 +107,7 @@
                 <th class="bg-primary">LCB</th>
                 <th class="bg-primary">Delivery Total</th>
                 <th class="bg-primary">Comment</th>
-                <th class="bg-primary">Sweating Difference</th>
+                <th class="bg-primary">Sweating Gap</th>
                 <th class="bg-primary">Difference (Sale - Delivery)</th>
             </thead>
 
@@ -129,7 +129,7 @@
                 </tr>
 
                 <tr class="childTableRow cat1">
-                    <td class="font-weight-bold">Month 1</td>
+                    <td class="font-weight-bold pad-left">Month 1</td>
                     <td>165</td>
                     <td>82</td>
                     <td>70</td>
@@ -144,7 +144,7 @@
                 </tr>
 
                 <tr class="childTableRow cat1">
-                    <td class="font-weight-bold">Month 2</td>
+                    <td class="font-weight-bold pad-left">Month 2</td>
                     <td>143</td>
                     <td>71</td>
                     <td>68</td>
@@ -159,7 +159,7 @@
                 </tr>
 
                 <tr class="childTableRow cat1">
-                    <td class="font-weight-bold">Month 3</td>
+                    <td class="font-weight-bold pad-left">Month 3</td>
                     <td>160</td>
                     <td>78</td>
                     <td>71</td>
@@ -190,7 +190,7 @@
                 </tr>
 
                 <tr class="childTableRow cat2">
-                    <td class="font-weight-bold">Month 1</td>
+                    <td class="font-weight-bold pad-left">Month 1</td>
                     <td>163</td>
                     <td>80</td>
                     <td>75</td>
@@ -205,7 +205,7 @@
                 </tr>
 
                 <tr class="childTableRow cat2">
-                    <td class="font-weight-bold">Month 2</td>
+                    <td class="font-weight-bold pad-left">Month 2</td>
                     <td>155</td>
                     <td>69</td>
                     <td>78</td>
@@ -220,7 +220,7 @@
                 </tr>
 
                 <tr class="childTableRow cat2">
-                    <td class="font-weight-bold">Month 3</td>
+                    <td class="font-weight-bold pad-left">Month 3</td>
                     <td>140</td>
                     <td>64</td>
                     <td>61</td>
@@ -235,7 +235,7 @@
                 </tr>
 
                 <tr class="newproject">
-                    <td class="font-weight-bold">Opporuntity Name 1</td>
+                    <td class="font-weight-bold pad-left">Opporuntity Name 1</td>
                     <td>284</td>
                     <td></td>
                     <td></td>
@@ -250,7 +250,7 @@
                 </tr>
 
                 <tr>
-                    <td class="font-weight-bold">Opporuntity Name 2</td>
+                    <td class="font-weight-bold pad-left">Opporuntity Name 2</td>
                     <td>292</td>
                     <td></td>
                     <td></td>
@@ -265,7 +265,7 @@
                 </tr>
 
                 <tr>
-                    <td class="font-weight-bold">Opporuntity Name 3</td>
+                    <td class="font-weight-bold pad-left">Opporuntity Name 3</td>
                     <td>282</td>
                     <td></td>
                     <td></td>
@@ -307,9 +307,9 @@
         <table class="table table-bordered table-responsive " id="currentWeek">
             <thead>
                 <tr>
-                    <th class="bg-primary" style=" width: 40%;"><span class="expandChildTable"
-                            data-prod-cat="4">Projects</th>
-                    <th class="bg-primary">Booking (SFDC) / Sales Commit</th>
+                    <th class="bg-primary" style=" width: 33%; text-align: left;"><span class="expandChildTable"
+                            data-prod-cat="4"></span><span style="margin-left: 7em;">Projects</span></th>
+                    <th class="bg-primary">Bookings (SFDC)</th>
                     <th class="bg-primary">RTS / RR </th>
                     <th class="bg-primary">RTS Pending </th>
                     <th class="bg-primary">DP</th>
@@ -318,7 +318,7 @@
                     <th class="bg-primary">LCB</th>
                     <th class="bg-primary">Delivery Total</th>
                     <th class="bg-primary">Comment</th>
-                    <th class="bg-primary">Sweating Difference</th>
+                    <th class="bg-primary">Sweating Gap</th>
                     <th class="bg-primary">Difference (Sale - Delivery)</th>
                 </tr>
             </thead>
@@ -326,42 +326,42 @@
                 <tr>
                     <td class="font-weight-bold"><span class="expandChildTable" data-prod-cat="5">Project Name 1</td>
                     <td>
-                        <!-- <div class="p1-col1-total"></div> -->
-                        <input type="text" value="3443" class="form-control p1-col1-total" disabled>
+                        <!-- <div class="p1-col1-total form-control" disabled></div> -->
+                        <input type="text" value="402" class="form-control p1-col1-total" disabled>
 
                         <!-- <input type="text" value="70" class="form-control booking " id="pn1" placeholder=""> -->
                     </td>
                     <td>
-                        <!-- <div class="p1-col2-total"></div> -->
-                        <input type="text" value="443" class="form-control p1-col1-total" disabled>
+                        <div class="form-control p1-col2-total" style="background: #e9ecef;"></div>
+                        <!-- <input type="text" value="443" class="form-control p1-col1-total" disabled> -->
 
                     </td>
                     <td>
-                        <!-- <input type="text" value="345" class="form-control p1-col1" disabled> -->
-                        <div class="p1-col3-total"></div>
+                        <!-- <input type="text" value="892" class="form-control p1-col1 p1-col3-total"> -->
+                        <div class="p1-col3-total form-control"></div>
                     </td>
                     <td>
                         <!-- <div class="p1-col4-total"></div> -->
-                        <input type="text" value="534" class="form-control p1-col1" disabled>
+                        <input type="text" value="" class="form-control p1-col1" >
 
                     </td>
                     <td>
                         <!-- <div class="p1-col5-total"></div> -->
-                        <input type="text" value="456" class="form-control p1-col1" disabled>
+                        <input type="text" value="" class="form-control p1-col1" >
 
                     </td>
                     <td>
                         <!-- <div class="p1-col6-total"></div> -->
-                        <input type="text" value="345" class="form-control p1-col1" disabled>
+                        <input type="text" value="" class="form-control p1-col1" >
 
                     </td>
                     <td>
                         <!-- <div class="p1-col7-total"></div> -->
-                        <input type="text" value="445" class="form-control p1-col1" disabled>
+                        <input type="text" value="" class="form-control p1-col1">
 
                     </td>
                     <td>
-                        <div class="p1-main-total"></div>
+                        <div class="p1-main-total dt"></div>
                         <!-- <input type="text" value="6" class="form-control dt"> -->
                     </td>
                     <td><textarea class="form-control" id="exampleFormControlTextarea1" rows="1"></textarea></td>
@@ -375,7 +375,7 @@
                     </td>
                 </tr>
                 <tr class="childTableRow cat5">
-                    <td class="font-weight-bold">Month 1</td>
+                    <td class="font-weight-bold pad-left">Month 1</td>
                     <td>
                         <input type="text" value="110" class="form-control booking p1-col1" id="pn2" placeholder=""
                             disabled>
@@ -412,7 +412,7 @@
                     </td>
                 </tr>
                 <tr class="childTableRow cat5">
-                    <td class="font-weight-bold">Month 2</td>
+                    <td class="font-weight-bold pad-left">Month 2</td>
                     <td>
                         <input type="text" value="115" class="form-control p1-col1" disabled>
                     </td>
@@ -448,7 +448,7 @@
                     </td>
                 </tr>
                 <tr class="childTableRow cat5">
-                    <td class="font-weight-bold">Month 3</td>
+                    <td class="font-weight-bold pad-left">Month 3</td>
                     <td>
                         <input type="text" value="177" class="form-control p1-col1" disabled>
                     </td>
@@ -487,39 +487,40 @@
                 <tr>
                     <td class="font-weight-bold"><span class="expandChildTable" data-prod-cat="6">Project Name 2</td>
                     <td>
-                        <!-- <div class="p2-col1-total"></div> -->
-                        <input type="text" value="456" class="form-control p2-col1-total" disabled>
+                        <div class="p2-col1-total form-control" style="background: #e9ecef;"></div>
+                        <!-- <input type="text" value="456" class="form-control p2-col1-total" disabled> -->
                     </td>
                     <td>
-                        <!-- <div class="p2-col2-total"></div> -->
-                        <input type="text" value="445" class="form-control p1-col1" disabled>
+                        <div class="p2-col2-total form-control" style="background: #e9ecef;"></div>
+                        <!-- <input type="text" value="445" class="form-control p1-col1" disabled> -->
 
                     </td>
                     <td>
-                        <div class="p2-col3-total"></div>
+                        <!-- <input type="text" value="1592" class="form-control p1-col1 p2-col3-total"> -->
+                        <div class="p2-col3-total form-control"></div>
                     </td>
                     <td>
                         <!-- <div class="p2-col4-total"></div> -->
-                        <input type="text" value="645" class="form-control p1-col1" disabled>
+                        <input type="text" value="" class="form-control p1-col1">
 
                     </td>
                     <td>
                         <!-- <div class="p2-col5-total"></div> -->
-                        <input type="text" value="245" class="form-control p1-col1" disabled>
+                        <input type="text" value="" class="form-control p1-col1">
 
                     </td>
                     <td>
                         <!-- <div class="p2-col6-total"></div> -->
-                        <input type="text" value="645" class="form-control p1-col1" disabled>
+                        <input type="text" value="" class="form-control p1-col1">
 
                     </td>
                     <td>
                         <!-- <div class="p2-col7-total"></div> -->
-                        <input type="text" value="545" class="form-control p1-col1" disabled>
+                        <input type="text" value="" class="form-control p1-col1">
 
                     </td>
                     <td>
-                        <div class="p2-main-total"></div>
+                        <div class="p2-main-total dt"></div>
                         <!-- <input type="text" value="6" class="form-control dt"> -->
                     </td>
                     <td><textarea class="form-control" id="exampleFormControlTextarea1" rows="1"></textarea></td>
@@ -533,7 +534,7 @@
                     </td>
                 </tr>
                 <tr class="childTableRow cat6">
-                    <td class="font-weight-bold">Month 1</td>
+                    <td class="font-weight-bold pad-left">Month 1</td>
                     <td>
                         <input type="text" value="510" class="form-control booking p2-col1" id="pn2" placeholder=""
                             disabled>
@@ -570,7 +571,7 @@
                     </td>
                 </tr>
                 <tr class="childTableRow cat6">
-                    <td class="font-weight-bold">Month 2</td>
+                    <td class="font-weight-bold pad-left">Month 2</td>
                     <td>
                         <input type="text" value="215" class="form-control p2-col1" disabled>
                     </td>
@@ -606,7 +607,7 @@
                     </td>
                 </tr>
                 <tr class="childTableRow cat6">
-                    <td class="font-weight-bold">Month 3</td>
+                    <td class="font-weight-bold pad-left">Month 3</td>
                     <td>
                         <input type="text" value="277" class="form-control p2-col1" disabled>
                     </td>
@@ -643,7 +644,7 @@
                 </tr>
 
                 <tr>
-                    <td class="font-weight-bold">Opporuntity Name 1</td>
+                    <td class="font-weight-bold pad-left">Opporuntity Name 1</td>
                     <td>
                         <input type="text" value="2221" class="form-control booking bq1" disabled>
                     </td>
@@ -677,7 +678,7 @@
                     </td>
                 </tr>
                 <tr>
-                    <td class="font-weight-bold">Opporuntity Name 2</td>
+                    <td class="font-weight-bold pad-left">Opporuntity Name 2</td>
                     <td>
                         <input type="text" value="2230" class="form-control booking bq2 " disabled>
                     </td>
@@ -711,7 +712,7 @@
                     </td>
                 </tr>
                 <tr>
-                    <td class="font-weight-bold">Opporuntity Name 3</td>
+                    <td class="font-weight-bold pad-left">Opporuntity Name 3</td>
                     <td>
                         <input type="text" value="2275" class="form-control booking bq3 " disabled>
                     </td>
