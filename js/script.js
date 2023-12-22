@@ -387,14 +387,14 @@ $(document).ready(function () {
     $(".bq3").val()
   );
 
-  subtractedTotal(".sd-1", 5, $(".p1-main-total").html());
-  subtractedTotal(".sd-2", 8, $(".p1-m1-total").html());
-  subtractedTotal(".sd-3", 9, $(".p1-m2-total").html());
-  subtractedTotal(".sd-4", 7, $(".p1-m3-total").html());
-  subtractedTotal(".sd-5", 5, $(".p2-main-total").html());
-  subtractedTotal(".sd-6", 58, $(".p2-m1-total").html());
-  subtractedTotal(".sd-7", 58, $(".p2-m2-total").html());
-  subtractedTotal(".sd-8", 57, $(".p2-m3-total").html());
+  subtractedTotal(".sd-1", 1360, $(".p1-main-total").html());
+  subtractedTotal(".sd-2", 327, $(".p1-m1-total").html());
+  subtractedTotal(".sd-3", 470, $(".p1-m2-total").html());
+  subtractedTotal(".sd-4", 5, $(".p1-m3-total").html());
+  subtractedTotal(".sd-5", 3363, $(".p2-main-total").html());
+  subtractedTotal(".sd-6", 1730, $(".p2-m1-total").html());
+  subtractedTotal(".sd-7", 1165, $(".p2-m2-total").html());
+  subtractedTotal(".sd-8", 450, $(".p2-m3-total").html());
 
   /*SD Column Total*/
   $(".sd-total").html(getTotal(".sd"));
