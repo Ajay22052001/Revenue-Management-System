@@ -6,11 +6,6 @@ $(document).ready(function () {
   const weekOnWeeksubtractedTotal = (columnName, currentWeek, lastWeek) => {
     let subTotal = currentWeek - lastWeek;
 
-    if (columnName == ".wow-r2-11") {
-      console.log("subTotal: ", subTotal);
-      console.log("lastWeek: ", lastWeek);
-      console.log("currentWeek: ", currentWeek);
-    }
     $(columnName).html(subTotal);
   };
 
@@ -465,11 +460,12 @@ $(document).ready(function () {
   //   $(".last-dt-total").html()
   // );
   $(".subTotal-dt").html(getSubTotal(".dt"));
-  getWoWTotal(
-    ".subTotal-booking",
-    $(".booking-total").html(),
-    $(".last-booking-total").html()
-  );
+  // getWoWTotal(
+  //   ".subTotal-booking",
+  //   $(".booking-total").html(),
+  //   $(".last-booking-total").html()
+  // );
+  $(".subTotal-booking").html($(".booking-total").html());
 
   /*Sub Total Value*/
   const getSubTotalOfCurrentWeek = () => {
@@ -567,11 +563,12 @@ $(document).ready(function () {
     //   $(".last-dt-total").html()
     // );
     $(".subTotal-dt").html(getSubTotal(".dt"));
-    getWoWTotal(
-      ".subTotal-booking",
-      $(".booking-total").html(),
-      $(".last-booking-total").html()
-    );
+    // getWoWTotal(
+    //   ".subTotal-booking",
+    //   $(".booking-total").html(),
+    //   $(".last-booking-total").html()
+    // );
+    $(".subTotal-booking").html($(".booking-total").html());
   });
   // Collapsible rows
   $(".hidden-row tr:not(.total)").hide();
