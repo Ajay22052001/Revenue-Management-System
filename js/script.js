@@ -357,6 +357,7 @@ $(document).ready(function () {
   /*SubTotal Column Total*/
 
   $(".dt-total").html(getSubTotal(".dt"));
+  // $(".subTotal-dt").html(getSubTotal(".dt"));
   $("#currentWeek").on("input", ".dt", function () {
     $(".dt-total").html(getSubTotal(".dt"));
   });
@@ -439,22 +440,26 @@ $(document).ready(function () {
     $(".last-sdt-total").html()
   );
 
-  getWoWTotal(
-    ".subTotal-final",
-    $(".sdt-total").html(),
-    $(".last-sdt-total").html()
-  );
-  getWoWTotal(
-    ".subTotal-sd",
-    $(".sd-total").html(),
-    $(".last-sd-total").html()
-  );
+  // getWoWTotal(
+  //   ".subTotal-final",
+  //   $(".sdt-total").html(),
+  //   $(".last-sdt-total").html()
+  // );
+  $(".subTotal-final").html(getSubTotal(".diff-sd"));
+
+  // getWoWTotal(
+  //   ".subTotal-sd",
+  //   $(".sd-total").html(),
+  //   $(".last-sd-total").html()
+  // );
+  $(".subTotal-sd").html(getSubTotal(".proj-total"));
+
   // getWoWTotal(
   //   ".subTotal-dt",
   //   $(".dt-total").html(),
   //   $(".last-dt-total").html()
   // );
-  $(".dt-total").html(getSubTotal(".dt"))
+  $(".subTotal-dt").html(getSubTotal(".dt"));
   getWoWTotal(
     ".subTotal-booking",
     $(".booking-total").html(),
@@ -472,13 +477,9 @@ $(document).ready(function () {
     let totalHcb = parseInt($(".hcb-total").text());
     $(".subTotal-hcb").html(totalHcb);
     let totalMcb = parseInt($(".mcb-total").text());
-    $(".subTotal-mcb").html(
-      totalMcb
-    );
+    $(".subTotal-mcb").html(totalMcb);
     let totalLcb = parseInt($(".lcb-total").text());
-    $(".subTotal-lcb").html(
-      totalLcb
-    );
+    $(".subTotal-lcb").html(totalLcb);
 
     return null;
   };
@@ -540,22 +541,26 @@ $(document).ready(function () {
       $(".last-sdt-total").html()
     );
 
-    getWoWTotal(
-      ".subTotal-final",
-      $(".sdt-total").html(),
-      $(".last-sdt-total").html()
-    );
-    getWoWTotal(
-      ".subTotal-sd",
-      $(".sd-total").html(),
-      $(".last-sd-total").html()
-    );
+    // getWoWTotal(
+    //   ".subTotal-final",
+    //   $(".sdt-total").html(),
+    //   $(".last-sdt-total").html()
+    // );
+    $(".subTotal-final").html(getSubTotal(".diff-sd"));
+
+    $(".subTotal-sd").html(getSubTotal(".proj-total"));
+
+    // getWoWTotal(
+    //   ".subTotal-sd",
+    //   $(".sd-total").html(),
+    //   $(".last-sd-total").html()
+    // );
     // getWoWTotal(
     //   ".subTotal-dt",
     //   $(".dt-total").html(),
     //   $(".last-dt-total").html()
     // );
-    $(".dt-total").html(getSubTotal(".dt"))
+    $(".subTotal-dt").html(getSubTotal(".dt"));
     getWoWTotal(
       ".subTotal-booking",
       $(".booking-total").html(),
