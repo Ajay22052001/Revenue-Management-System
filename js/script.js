@@ -5,6 +5,12 @@ $(document).ready(function () {
   };
   const weekOnWeeksubtractedTotal = (columnName, currentWeek, lastWeek) => {
     let subTotal = currentWeek - lastWeek;
+
+    if (columnName == ".wow-r2-11") {
+      console.log("subTotal: ", subTotal);
+      console.log("lastWeek: ", lastWeek);
+      console.log("currentWeek: ", currentWeek);
+    }
     $(columnName).html(subTotal);
   };
 
@@ -82,7 +88,6 @@ $(document).ready(function () {
     let sub_calculated_total_sum = 0;
     $(clickedClass).each(function () {
       let get_sub_textbox_value = parseInt($(this).text());
-      console.log("get_sub_textbox_value: ", get_sub_textbox_value);
       if ($.isNumeric(get_sub_textbox_value)) {
         sub_calculated_total_sum += parseFloat(get_sub_textbox_value);
       }
@@ -240,7 +245,7 @@ $(document).ready(function () {
     subtractedTotal(".sd-2", 8, $(".p1-m1-total").html());
     $(".sd-total").html(getTotal(".sd"));
   });
-  $(".sd-total").html(13);
+  // $(".sd-total").html(13);
 
   $(".p1-m2-total").html(getOpporuntityTotal(".p1-m2"));
   $("#currentWeek").on("input", ".p1-m2", function () {
@@ -357,7 +362,6 @@ $(document).ready(function () {
   /*SubTotal Column Total*/
 
   $(".dt-total").html(getSubTotal(".dt"));
-  // $(".subTotal-dt").html(getSubTotal(".dt"));
   $("#currentWeek").on("input", ".dt", function () {
     $(".dt-total").html(getSubTotal(".dt"));
   });
@@ -430,13 +434,14 @@ $(document).ready(function () {
   );
   weekOnWeeksubtractedTotal(
     ".wow-r2-10",
-    53,
+    64,
     // $(".sd-total").html(),
     $(".last-sd-total").html()
   );
   weekOnWeeksubtractedTotal(
     ".wow-r2-11",
-    $(".sdt-total").html(),
+    // $(".sdt-total").html(),
+    519,
     $(".last-sdt-total").html()
   );
 
@@ -531,13 +536,14 @@ $(document).ready(function () {
     );
     weekOnWeeksubtractedTotal(
       ".wow-r2-10",
-      53,
+      64,
       // $(".sd-total").html(),
       $(".last-sd-total").html()
     );
     weekOnWeeksubtractedTotal(
       ".wow-r2-11",
-      $(".sdt-total").html(),
+      // $(".sdt-total").html(),
+      519,
       $(".last-sdt-total").html()
     );
 
@@ -595,7 +601,6 @@ function datePicker() {
     var datearray = d.split("-");
 
     var newdate = datearray[2] + "-" + datearray[1] + "-" + datearray[0];
-    console.log(newdate);
     document.getElementById("selected-date").innerHTML = "Date: " + newdate;
   }
 }
