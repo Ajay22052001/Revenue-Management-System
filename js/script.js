@@ -82,6 +82,7 @@ $(document).ready(function () {
     let sub_calculated_total_sum = 0;
     $(clickedClass).each(function () {
       let get_sub_textbox_value = parseInt($(this).text());
+      console.log("get_sub_textbox_value: ", get_sub_textbox_value);
       if ($.isNumeric(get_sub_textbox_value)) {
         sub_calculated_total_sum += parseFloat(get_sub_textbox_value);
       }
@@ -190,7 +191,7 @@ $(document).ready(function () {
     let calculated_total_sum = 0;
     let clickedClass = "#currentWeek " + rowClass;
     $(clickedClass).each(function () {
-      let get_textbox_value = $(this).html();
+      let get_textbox_value = $(this).text();
       if ($.isNumeric(get_textbox_value)) {
         calculated_total_sum += parseFloat(get_textbox_value);
       }
@@ -352,9 +353,6 @@ $(document).ready(function () {
     $(".p2-main-total").html(getTotal(".proj2-month-total"));
   });
   $(".p2-main-total").html(getTotal(".proj2-month-total"));
-  // $("#currentWeek").on("input", ".proj2-month-total", function () {
-  //   $(".p2-main-total").html(getOpporuntityTotal(".proj2-month-total"));
-  // });
 
   /*SubTotal Column Total*/
 
@@ -362,11 +360,6 @@ $(document).ready(function () {
   $("#currentWeek").on("input", ".dt", function () {
     $(".dt-total").html(getSubTotal(".dt"));
   });
-
-  // $(".diff-total").html(getSubTotal(".diff"));
-  // $("#currentWeek").on("input", ".diff", function () {
-  //   $(".diff-total").html(getSubTotal(".diff"));
-  // });
 
   subtractedTotal(
     ".q1-diff-sd-total",
@@ -491,17 +484,84 @@ $(document).ready(function () {
 
   getSubTotalOfCurrentWeek();
 
+  $(".sdt-total").html(getSubTotal(".diff-sd"));
+  $(".sd-total").html(getSubTotal(".proj-total"));
+  $("#currentWeek").on("input", function () {
+    weekOnWeeksubtractedTotal(
+      ".wow-r2-1",
+      $(".booking-total").html(),
+      $(".last-booking-total").html()
+    );
+    weekOnWeeksubtractedTotal(
+      ".wow-r2-2",
+      $(".rst-total").html(),
+      $(".last-rst-total").html()
+    );
+    weekOnWeeksubtractedTotal(
+      ".wow-r2-3",
+      $(".rst-pending-total").html(),
+      $(".last-rst-pending-total").html()
+    );
+    weekOnWeeksubtractedTotal(
+      ".wow-r2-4",
+      $(".dp-total").html(),
+      $(".last-dp-total").html()
+    );
+    weekOnWeeksubtractedTotal(
+      ".wow-r2-5",
+      $(".hcb-total").html(),
+      $(".last-hcb-total").html()
+    );
+    weekOnWeeksubtractedTotal(
+      ".wow-r2-6",
+      $(".mcb-total").html(),
+      $(".last-mcb-total").html()
+    );
+    weekOnWeeksubtractedTotal(
+      ".wow-r2-7",
+      $(".lcb-total").html(),
+      $(".last-lcb-total").html()
+    );
+    weekOnWeeksubtractedTotal(
+      ".wow-r2-8",
+      $(".dt-total").html(),
+      $(".last-dt-total").html()
+    );
+    weekOnWeeksubtractedTotal(
+      ".wow-r2-10",
+      53,
+      // $(".sd-total").html(),
+      $(".last-sd-total").html()
+    );
+    weekOnWeeksubtractedTotal(
+      ".wow-r2-11",
+      $(".sdt-total").html(),
+      $(".last-sdt-total").html()
+    );
+
+    getWoWTotal(
+      ".subTotal-final",
+      $(".sdt-total").html(),
+      $(".last-sdt-total").html()
+    );
+    getWoWTotal(
+      ".subTotal-sd",
+      $(".sd-total").html(),
+      $(".last-sd-total").html()
+    );
+    getWoWTotal(
+      ".subTotal-dt",
+      $(".dt-total").html(),
+      $(".last-dt-total").html()
+    );
+    getWoWTotal(
+      ".subTotal-booking",
+      $(".booking-total").html(),
+      $(".last-booking-total").html()
+    );
+  });
   // Collapsible rows
   $(".hidden-row tr:not(.total)").hide();
-
-  // $('tr.header').click(function() {
-  //   console.log("clicked")
-  //   $(this).find('span').text(function(_, value) {
-  //     return value == '+' ? '-' : '+'
-  //   });
-
-  //   $(this).nextUntil('tr.header').slideToggle(200, function() {});
-  // });
 
   $(function () {
     $("th.expandChildTable").on("click", function () {
