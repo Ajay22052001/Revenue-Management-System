@@ -200,6 +200,8 @@ $(document).ready(function () {
     return calculated_total_sum;
   };
 
+  
+
   $(".opporuntity-1-total").html(getOpporuntityTotal(".opporuntity-1"));
   $("#currentWeek").on("input", ".opporuntity-1", function () {
     $(".opporuntity-1-total").html(getOpporuntityTotal(".opporuntity-1"));
@@ -273,11 +275,15 @@ $(document).ready(function () {
     $(".p1-col3-total").html(getOpporuntityTotal(".p1-col3"));
     $(".p1-main-total").html(getTotal(".proj1-month-total"));
   });
+
+  
   $(".p1-col4-total").html(getOpporuntityTotal(".p1-col4"));
   $("#currentWeek").on("input", ".p1-col4", function () {
     $(".p1-col4-total").html(getOpporuntityTotal(".p1-col4"));
     $(".p1-main-total").html(getTotal(".proj1-month-total"));
   });
+
+  
   $(".p1-col5-total").html(getOpporuntityTotal(".p1-col5"));
   $("#currentWeek").on("input", ".p1-col5", function () {
     $(".p1-col5-total").html(getOpporuntityTotal(".p1-col5"));
@@ -532,14 +538,14 @@ $(document).ready(function () {
     );
     weekOnWeeksubtractedTotal(
       ".wow-r2-10",
-      64,
-      // $(".sd-total").html(),
+      
+      $(".sd-total").html(),
       $(".last-sd-total").html()
     );
     weekOnWeeksubtractedTotal(
       ".wow-r2-11",
-      // $(".sdt-total").html(),
-      519,
+      $(".sdt-total").html(),
+     
       $(".last-sdt-total").html()
     );
 
@@ -572,6 +578,9 @@ $(document).ready(function () {
   });
   // Collapsible rows
   $(".hidden-row tr:not(.total)").hide();
+
+  console.log($(".subTotal-dt").html(getSubTotal(".dt")));
+  // console.log($(".last-sdt-total").html());
 
   $(function () {
     $("th.expandChildTable").on("click", function () {
