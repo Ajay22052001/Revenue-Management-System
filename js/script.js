@@ -85,6 +85,7 @@ $(document).ready(function () {
       let get_sub_textbox_value = parseInt($(this).text());
       if ($.isNumeric(get_sub_textbox_value)) {
         sub_calculated_total_sum += parseFloat(get_sub_textbox_value);
+        console.log(sub_calculated_total_sum);
       }
     });
     return sub_calculated_total_sum;
@@ -239,7 +240,7 @@ $(document).ready(function () {
   $("#currentWeek").on("input", ".p1-m1", function () {
     $(".p1-m1-total").html(getOpporuntityTotal(".p1-m1"));
     $(".p1-main-total").html(getTotal(".proj1-month-total"));
-    subtractedTotal(".sd-2", 8, $(".p1-m1-total").html());
+    subtractedTotal(".sd-2", ($(".p1-m1-total").html() - Math.floor((Math.random() * 5) + 1)), $(".p1-m1-total").html());
     $(".sd-total").html(getTotal(".sd"));
   });
   // $(".sd-total").html(13);
@@ -248,7 +249,7 @@ $(document).ready(function () {
   $("#currentWeek").on("input", ".p1-m2", function () {
     $(".p1-m2-total").html(getOpporuntityTotal(".p1-m2"));
     $(".p1-main-total").html(getTotal(".proj1-month-total"));
-    subtractedTotal(".sd-3", 9, $(".p1-m2-total").html());
+    subtractedTotal(".sd-3", ($(".p1-m2-total").html() - Math.floor((Math.random() * 10) + 1)), $(".p1-m2-total").html());
     $(".sd-total").html(getTotal(".sd"));
   });
   $(".p1-m3-total").html(getOpporuntityTotal(".p1-m3"));
@@ -496,6 +497,9 @@ $(document).ready(function () {
   $(".sdt-total").html(getSubTotal(".diff-sd"));
   $(".sd-total").html(getSubTotal(".proj-total"));
   $("#currentWeek").on("input", function () {
+    $(".sdt-total").html(getSubTotal(".diff-sd"));
+    $(".dt-total").html(getSubTotal(".dt"));
+    
     weekOnWeeksubtractedTotal(
       ".wow-r2-1",
       $(".booking-total").html(),
