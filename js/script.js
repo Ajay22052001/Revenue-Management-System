@@ -3,6 +3,15 @@ $(document).ready(function () {
     let subTotal = salesValue - deliveryTotal;
     $(columnName).html(subTotal);
   };
+
+  const subtractedSubTotal = (columnName, currentWeek, lastWeek) => {
+    let subTotal = currentWeek - lastWeek;
+    $(columnName).html(subTotal);
+    console.log(columnName);
+    console.log(currentWeek);
+    console.log(lastWeek);
+  };
+
   const weekOnWeeksubtractedTotal = (columnName, currentWeek, lastWeek) => {
     let subTotal = currentWeek - lastWeek;
 
@@ -85,7 +94,7 @@ $(document).ready(function () {
       let get_sub_textbox_value = parseInt($(this).text());
       if ($.isNumeric(get_sub_textbox_value)) {
         sub_calculated_total_sum += parseFloat(get_sub_textbox_value);
-        console.log(sub_calculated_total_sum);
+        // console.log(sub_calculated_total_sum);
       }
     });
     return sub_calculated_total_sum;
@@ -393,6 +402,13 @@ $(document).ready(function () {
   subtractedTotal(".sd-7", 122, $(".p2-m2-total").html());
   subtractedTotal(".sd-8", 113, $(".p2-m3-total").html());
 
+  // For Sub Total diff
+  subtractedSubTotal(
+    "wow-r3-2", 
+    $(".subTotal-rst").text(),
+    $(".st-rst").text()
+  )
+
   /*Week on week */
   weekOnWeeksubtractedTotal(
     ".wow-r2-1",
@@ -447,6 +463,11 @@ $(document).ready(function () {
     $(".last-sdt-total").html()
   );
 
+
+  // For Sub Total difference
+  
+
+
   // getWoWTotal(
   //   ".subTotal-final",
   //   $(".sdt-total").html(),
@@ -479,15 +500,15 @@ $(document).ready(function () {
     let totalRst = parseInt($(".rst-total").text());
     $(".subTotal-rst").html(totalRst);
     let totalRstPending = parseInt($(".rst-pending-total").text());
-    $(".subTotal-rst-pending").html(totalRstPending);
+    $(".subTotal-rst-pending").html(totalRstPending + totalRst);
     let totalDp = parseInt($(".dp-total").text());
-    $(".subTotal-dp").html(totalDp);
+    $(".subTotal-dp").html(totalDp + totalRstPending + totalRst);
     let totalHcb = parseInt($(".hcb-total").text());
-    $(".subTotal-hcb").html(totalHcb);
+    $(".subTotal-hcb").html(totalHcb + totalDp + totalRstPending + totalRst);
     let totalMcb = parseInt($(".mcb-total").text());
-    $(".subTotal-mcb").html(totalMcb);
+    $(".subTotal-mcb").html(totalMcb + totalHcb + totalDp + totalRstPending + totalRst);
     let totalLcb = parseInt($(".lcb-total").text());
-    $(".subTotal-lcb").html(totalLcb);
+    $(".subTotal-lcb").html(totalLcb + totalMcb + totalHcb + totalDp + totalRstPending + totalRst);
 
     return null;
   };
@@ -561,7 +582,8 @@ $(document).ready(function () {
     $(".subTotal-final").html(getSubTotal(".diff-sd"));
 
     $(".subTotal-sd").html(getSubTotal(".proj-total"));
-
+    
+      
     // getWoWTotal(
     //   ".subTotal-sd",
     //   $(".sd-total").html(),
@@ -583,7 +605,7 @@ $(document).ready(function () {
   // Collapsible rows
   $(".hidden-row tr:not(.total)").hide();
 
-  console.log($(".subTotal-dt").html(getSubTotal(".dt")));
+  // console.log($(".subTotal-dt").html(getSubTotal(".dt")));
   // console.log($(".last-sdt-total").html());
 
   $(function () {
