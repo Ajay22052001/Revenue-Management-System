@@ -510,6 +510,15 @@ $(document).ready(function () {
     let totalLcb = parseInt($(".lcb-total").text());
     $(".subTotal-lcb").html(totalLcb + totalMcb + totalHcb + totalDp + totalRstPending + totalRst);
 
+    $(".wow-r3-2").html($(".subTotal-rst").html() - $(".st-rts").html());
+    $(".wow-r3-3").html($(".subTotal-rst-pending").html() - $(".st-stspending").html());
+    $(".wow-r3-4").html($(".subTotal-dp").html() - $(".st-dp").html());
+    $(".wow-r3-5").html($(".subTotal-hcb").html() - $(".st-hcb").html());
+    $(".wow-r3-6").html($(".subTotal-mcb").html() - $(".st-mcb").html());
+    $(".wow-r3-7").html($(".subTotal-lcb").html() - $(".st-lcb").html());
+    $(".wow-r3-8").html($(".subTotal-lcb").html() - $(".st-lcb").html());
+
+
     return null;
   };
 
