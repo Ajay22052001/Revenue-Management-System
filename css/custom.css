@@ -6,11 +6,23 @@
 .table{
     font-size: 12px;
 }
+
+.diff-table td {
+    width: 6%;
+    text-align: right;
+    padding: 0.3rem;
+    vertical-align: middle;
+}
+.diff-table{
+    font-size: 12px;
+}
 .table th{
     vertical-align: middle !important;
     text-align: center;
     /* width: 28%; */
 }
+
+
 
 
 td:nth-child(1) {  
